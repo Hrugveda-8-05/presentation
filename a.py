@@ -9,7 +9,7 @@ password = "anything"
 
 # ❌ VULNERABLE - string formatting directly into query
 query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
-cursor.execute(query)
+cursor.execute(query, params)
 
 result = cursor.fetchone()
 if result:
